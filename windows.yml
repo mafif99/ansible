@@ -5,5 +5,8 @@
     ansible_connection: ssh
     ansible_port: 22
   tasks:
+    - name: Debug - Login berhasil
+      ansible.builtin.debug:
+        msg: "Login SSH ke server Windows berhasil sebagai user: {{ ansible_user }}"
     - name: Ping 8.8.8.8 from Windows server
       ansible.builtin.shell: ping -n 4 8.8.8.8
