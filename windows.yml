@@ -6,4 +6,4 @@
     ansible_port: 22
   tasks:
     - name: Ping 8.8.8.8 from Windows server
-      ansible.windows.win_command: ping -n 4 8.8.8.8
+      ansible.builtin.shell: ping -n 4 8.8.8.8
