@@ -2,7 +2,8 @@
   hosts: windows_servers
   gather_facts: no
   vars:
-    ansible_connection: winrm
+    ansible_connection: ssh
+    ansible_port: 22
   tasks:
     - name: Ping 8.8.8.8 from Windows server
       ansible.windows.win_command: ping -n 4 8.8.8.8
