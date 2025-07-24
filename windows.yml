@@ -1,11 +1,7 @@
-- hosts: win
+- name: Restart Windows Server via SSH
+  hosts: windows_servers
   gather_facts: no
   tasks:
-   - name: test powershell
-     win_shell: |
-              get-host
-     register: result_get_host
-
-   - name: display result_get_host
-     debug:
-       var: result_get_host
+    - name: Restart the Windows server
+      ansible.builtin.shell: shutdown /r /t 0 /f
+      become: false
