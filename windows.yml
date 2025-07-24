@@ -4,5 +4,5 @@
   vars:
     ansible_connection: winrm
   tasks:
-    - name: Restart the Windows server
-      ansible.windows.win_command: shutdown /r /t 0 /f
+    - name: Ping 8.8.8.8 from Windows server
+      ansible.windows.win_command: ping -n 4 8.8.8.8
