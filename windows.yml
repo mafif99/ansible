@@ -1,7 +1,8 @@
 - name: Restart Windows Server via SSH
   hosts: windows_servers
   gather_facts: no
+  vars:
+    ansible_connection: winrm
   tasks:
     - name: Restart the Windows server
-      ansible.builtin.shell: shutdown /r /t 0 /f
-      become: false
+      ansible.windows.win_command: shutdown /r /t 0 /f
